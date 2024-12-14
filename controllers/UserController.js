@@ -145,7 +145,7 @@ async function login(req, res) {
                 let key = data.role === "Buyer" ? process.env.JWT_SECRET_KEY_BUYER : process.env.JWT_SECRET_KEY_ADMIN
                 jwt.sign({ data }, key, { expiresIn: "15 Days" }, (error, token) => {
                     if (error) {
-                        // console.log(error)
+                        console.log(error)
                         res.status(500).send({ result: "Fail", reason: "Internal Server Error" })
                     }
                     else
@@ -158,6 +158,7 @@ async function login(req, res) {
         else
             res.status(401).send({ result: "Fail", reason: "Invalid Username or Password" })
     } catch (error) {
+        console.log("Test",error)
         res.status(500).send({ result: "Fail", reason: "Internal Server Error" })
     }
 }
