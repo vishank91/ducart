@@ -8,7 +8,7 @@ const MainRouter = require("./routes/MainRouter")
 
 const app = express()
 
-var whitelist = ['http://localhost:3000', 'http://localhost:8000',] 
+var whitelist = ['http://localhost:3000', 'http://localhost:8000','https://ducart.onrender.com/'] 
 var corsOptions = {
     origin: function (origin, callback) {
         // console.log("Origin",origin)
